@@ -1,18 +1,32 @@
 @tool
-@icon("uid://dkti7pc37e84")
-class_name Water
+@icon("uid://cifkqtawd8mq0")
+class_name Liquid
 extends Area2D
 
+@export_enum("Custom", "Water", "Lava") var preset = "Custom":
+	set(value):
+		preset = value
+		match value:
+			"Water":
+				_apply_water_preset()
+			"Lava":
+				_apply_lava_preset()
+			"Custom":
+				pass
+		if Engine.is_editor_hint():
+			notify_property_list_changed()
+
+@export_category("Appearance")
 @export var color :Color = Color(0.0, 0.246, 0.77, 1.0):
 	set(val):
 		color=val
 		polygon.color = val
-@export var height := 400.0:
+@export var height := 200.0:
 	set(val):
 		height= val
 		collision_rect.size.y = val
 		collision_shape.position.y= val/2
-@export var width := 1000.0:
+@export var width := 500.0:
 	set(val):
 		width = val
 		collision_rect.size.x = val
@@ -144,3 +158,47 @@ func _start_splash(posx, velocity_y):
 
 func test_splash():
 	_start_splash(width/2, 600)
+
+
+func _validate_property(property: Dictionary) -> void:
+	if preset != "Custom":
+		var preset_properties = [
+		"color",
+		"stiffness",
+		"damping",
+		"power",
+		"spread",
+		"pass_waves",
+		"wave_speed",
+		"wave_frequency",
+		"wave_amplitude"]
+		if property.name in preset_properties:
+			property.usage |= PROPERTY_USAGE_READ_ONLY
+			#property.usage &= ~PROPERTY_USAGE_EDITOR
+
+func _apply_water_preset():
+	color = Color(0.0, 0.246, 0.77, 1.0)
+	
+	stiffness = 0.007
+	damping = 0.03
+	power = 0.03
+	spread = 0.003
+
+	pass_waves = true
+	wave_speed = 2.0
+	wave_frequency = 0.3
+	wave_amplitude = 0.05
+
+
+func _apply_lava_preset():
+	color = Color(1.0, 0.15, 0.0, 1.0)
+	
+	stiffness = 0.005
+	damping = 0.03
+	power = 0.01
+	spread = 0.002
+
+	pass_waves = true
+	wave_speed = 0.5
+	wave_frequency = 0.2
+	wave_amplitude = 0.04

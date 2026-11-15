@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-   sodipodi:docname="water_icon.svg"
+   sodipodi:docname="liquid_icon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@
      id="layer1">
     <path
        id="rect1"
-       style="fill:#0000ff;stroke-width:6.21474;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:100"
+       style="fill:#6393ff;stroke-width:6.21474;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:100;fill-opacity:1"
        d="m 27.76415,52.602316 c 12.496028,-1.836609 22.573337,11.407216 49.830445,11.658302 33.152465,0.305393 47.804855,-17.07481 73.026485,-16.260434 20.0482,0.647332 29.84032,5.864428 29.84032,15.885592 v 72.228444 c 0,3.92167 -3.15716,7.07883 -7.07883,7.07883 H 26.617431 c -3.92167,0 -7.078826,-3.15716 -7.078826,-7.07883 V 63.885776 c 0,-3.92167 3.050035,-10.522787 8.225545,-11.28346 z"
        sodipodi:nodetypes="ssssssssss" />
   </g>
