@@ -1,6 +1,6 @@
 @tool
 @icon("uid://cifkqtawd8mq0")
-class_name Liquid
+class_name Liquid2D
 extends Area2D
 
 @export_enum("Custom", "Water", "Lava") var preset = "Custom":
