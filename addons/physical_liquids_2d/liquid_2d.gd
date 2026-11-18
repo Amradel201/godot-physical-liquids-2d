@@ -69,6 +69,7 @@ func _enter_tree() -> void:
 	spring_count = width/17
 	
 	polygon.color = color
+	polygon.use_parent_material = true
 	add_child(polygon)
 	
 	collision_rect.size = Vector2(width, height)
